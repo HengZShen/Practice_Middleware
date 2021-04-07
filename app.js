@@ -42,7 +42,7 @@ app.use('/', function (req, res, next) {
   let minute = date.getMinutes()
   let second = date.getSeconds()
 
-  console.log(`${year}-${month}-${day} ${hour}:${minute}:${second} | ${req.method} ${req.originalUrl}`)
+  console.log(`${year}-${month}-${day} ${hour}:${minute}:${second} | ${req.method} from ${req.originalUrl}`)
   next()
 })
 
