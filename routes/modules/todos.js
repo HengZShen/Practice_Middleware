@@ -25,7 +25,7 @@ router.get('/:id', (req, res, next) => {
   const date = new Date()
   let second = date.getSeconds()
   // 30秒之後 才能進入進入detail page
-  if (second >= 30) next('route')
+  if (second >= 30) return next('route')
   else next()
 }, (req, res) => {
   // 30秒之前 無法顯示detail page
@@ -41,7 +41,7 @@ router.get('/:id/intercept', (req, res) => {
   res.send('intercept')
 })
 
-// 30秒之後  接到這裡
+// next('route') 30秒之後  接到這裡
 router.get('/:id', (req, res) => {
   const id = req.params.id
   return Todo.findById(id)

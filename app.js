@@ -35,13 +35,14 @@ app.use('/', function (req, res, next) {
   const date = new Date()
   let day = date.getDate()
   let year = date.getFullYear()
+  // month start from 0 (January)
   let month = (date.getMonth() + 1)
+  // 台灣為國際標準時間 + 8
   let hour = (date.getHours() + 8)
-
   let minute = date.getMinutes()
   let second = date.getSeconds()
 
-  console.log(`${year}-${month}-${day} ${hour}:${minute}:${second} | ${req.method} ${req.url}`)
+  console.log(`${year}-${month}-${day} ${hour}:${minute}:${second} | ${req.method} ${req.originalUrl}`)
   next()
 })
 
