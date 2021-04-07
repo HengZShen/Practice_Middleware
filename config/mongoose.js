@@ -18,5 +18,4 @@ db.once('open', () => {
 })
 
 module.exports = db
-module.exports = __dirname
-module.exports = __filename
+

@@ -17,6 +17,7 @@ const routes = require('./routes')
 const app = express()
 
 
+
 app.use(methodOverride('_method'))
 
 // body parser
@@ -29,7 +30,29 @@ app.engine('hbs', exphbs({ defaultLayout: 'main', extname: ".hbs" }))
 app.set('view engine', 'hbs')
 
 
+
+app.use('/', function (req, res, next) {
+  const date = new Date()
+  let day = date.getDate()
+  let year = date.getFullYear()
+  let month = (date.getMonth() + 1)
+  let hour = (date.getHours() + 8)
+
+  let minute = date.getMinutes()
+  let second = date.getSeconds()
+
+  console.log(`${year}-${month}-${day} ${hour}:${minute}:${second} | ${req.method} ${req.url}`)
+  next()
+})
+
+
 app.use(routes)
+
+// won't execute
+app.use((req, res, next) => {
+  console.log("this won't show")
+  next()
+})
 
 
 app.listen(PORT, () => {

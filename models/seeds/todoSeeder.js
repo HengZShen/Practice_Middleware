@@ -1,10 +1,7 @@
 
-const { db, _dirname, _filename } = require('../../config/mongoose')
+const db = require('../../config/mongoose')
 
 const Todo = require('../todo')
-
-console.log(_dirname)
-console.log(_filename)
 
 
 // 當連線成功
