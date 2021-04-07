@@ -24,14 +24,13 @@ router.post('/', (req, res) => {
 router.get('/:id', (req, res, next) => {
   const date = new Date()
   let second = date.getSeconds()
+  req.nowSecond = second
   // 30秒之後 才能進入進入detail page
   if (second >= 30) return next('route')
   else next()
 }, (req, res) => {
   // 30秒之前 無法顯示detail page
-  const date = new Date()
-  let second = date.getSeconds()
-  res.send(`Before 30, now time is ${second}`)
+  res.send(`Before 30, now time is ${req.nowSecond}`)
 })
 
 
