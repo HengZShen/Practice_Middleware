@@ -49,7 +49,8 @@ app.use('/', function (req, res, next) {
 
 app.use(routes)
 
-// won't execute
+
+// won't execute, except the above routes don't work properly
 app.use((req, res, next) => {
   console.log("this won't show")
   next()

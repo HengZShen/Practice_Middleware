@@ -40,6 +40,7 @@ router.get('/:id/intercept', (req, res) => {
   res.send('intercept')
 })
 
+
 // next('route') 30秒之後  接到這裡
 router.get('/:id', (req, res) => {
   const id = req.params.id
