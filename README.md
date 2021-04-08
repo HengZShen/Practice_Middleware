@@ -20,9 +20,9 @@ practice how to implement middleware in request-response cycle
 
 ## Installing
  1. Open your terminal, and clone this project <br>
- `git clone https://github.com/HengZShen/ExecutionTime.git `
+ `git clone https://github.com/HengZShen/Practice_Middleware.git `
  2. Open terminal, enter the project folder  <br>
- `cd ExecutionTime`
+ `cd Practice_Middleware`
  3. Install npm  <br>
  ` Type "npm intall" in your terminal`
  4. Install nodemen  <br>
